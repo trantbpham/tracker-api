@@ -33,9 +33,9 @@ function getContext({ req }) {
 const server = new ApolloServer({
   typeDefs: fs.readFileSync('schema.graphql', 'utf-8'),
   resolvers,
-  context: getContext,
-    playground: true,
+  playground: true,
   introspection: true,
+  context: getContext,
   formatError: (error) => {
     console.log(error);
     return error;
