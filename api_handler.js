@@ -34,12 +34,12 @@ const server = new ApolloServer({
   typeDefs: fs.readFileSync('schema.graphql', 'utf-8'),
   resolvers,
   context: getContext,
+    playground: true,
+  introspection: true,
   formatError: (error) => {
     console.log(error);
     return error;
   },
-  playground: true,
-  introspection: true,
 });
 
 function installHandler(app) {
